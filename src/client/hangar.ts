@@ -29,11 +29,7 @@ import {
 } from './internal/index.js';
 import type { HangarClientOptions } from '../types/base.js';
 
-/**
- * Grouped internal API namespaces.
- * These endpoints are undocumented, unstable, and intended for the Hangar
- * frontend. Use them at your own risk.
- */
+/** Grouped internal API namespaces. These endpoints are undocumented, unstable, and intended for the Hangar frontend. */
 export interface InternalApis {
   readonly admin: InternalAdminApi;
   readonly apiKeys: InternalApiKeysApi;
@@ -57,11 +53,9 @@ export interface InternalApis {
 
 /**
  * Client for the Hangar plugin marketplace API.
- *
  * @example
  * ```ts
  * import HangarClient from 'hangar-js';
- *
  * const client = new HangarClient({ apiKey: 'your-api-key' });
  * const project = await client.projects.get('PaperMC', 'Hangar');
  * ```
@@ -79,10 +73,7 @@ export class HangarClient {
   readonly users: UsersApi;
   readonly versions: VersionsApi;
 
-  /**
-   * Internal API namespaces. These endpoints are undocumented and may change
-   * without notice.
-   */
+  /** Internal API namespaces. These endpoints are undocumented and may change without notice. */
   readonly internal: InternalApis;
 
   constructor(options: HangarClientOptions = {}) {

@@ -1,5 +1,6 @@
 import type { HangarClientCore } from '../core.js';
 
+/** A message within a version review. */
 export interface ReviewMessage {
   message: string;
   args: Record<string, unknown>;

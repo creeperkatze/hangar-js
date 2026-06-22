@@ -1,6 +1,7 @@
 import type { HangarClientCore } from './core.js';
 import type { Platform, PlatformVersion } from '../types/index.js';
 
+/** API namespace for platform data. */
 export class PlatformsApi {
   constructor(private readonly core: HangarClientCore) {}
 

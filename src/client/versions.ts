@@ -8,6 +8,7 @@ import type {
 } from '../types/index.js';
 import type { PaginatedResult } from '../types/base.js';
 
+/** API namespace for project versions. */
 export class VersionsApi {
   constructor(private readonly core: HangarClientCore) {}
 
@@ -30,15 +31,7 @@ export class VersionsApi {
     );
   }
 
-  /**
-   * Uploads a new version.
-   *
-   * The `files` parameter should be a `FormData` or `Blob` array representing
-   * the multipart upload (one entry per platform). The `data` parameter maps
-   * to the JSON part of the multipart request.
-   *
-   * Requires `create_version` permission.
-   */
+  /** Uploads a new version. Requires create_version permission. */
   create(
     author: string,
     slug: string,
@@ -74,10 +67,7 @@ export class VersionsApi {
     );
   }
 
-  /**
-   * Returns daily download stats for a version between two dates.
-   * Dates must be in `YYYY-MM-DD` format.
-   */
+  /** Returns daily download stats for a version between two dates (YYYY-MM-DD format). */
   getStats(
     author: string,
     slug: string,

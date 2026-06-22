@@ -1,6 +1,7 @@
 import type { HangarClientCore } from './core.js';
 import type { ApiKey, CreateApiKeyForm } from '../types/index.js';
 
+/** API namespace for managing API keys. */
 export class KeysApi {
   constructor(private readonly core: HangarClientCore) {}
 

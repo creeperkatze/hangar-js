@@ -10,6 +10,7 @@ import type {
 } from '../types/index.js';
 import type { PaginatedResult } from '../types/base.js';
 
+/** API namespace for projects. */
 export class ProjectsApi {
   constructor(private readonly core: HangarClientCore) {}
 
@@ -25,10 +26,7 @@ export class ProjectsApi {
     );
   }
 
-  /**
-   * Returns daily view/download stats for a project between two dates.
-   * Dates must be in `YYYY-MM-DD` format.
-   */
+  /** Returns daily view/download stats for a project between two dates (YYYY-MM-DD format). */
   getStats(author: string, slug: string, options: GetProjectStatsOptions): Promise<Record<string, DayProjectStats>> {
     return this.core.requestJson<Record<string, DayProjectStats>>(
       `v1/projects/${encodeURIComponent(author)}/${encodeURIComponent(slug)}/stats`,

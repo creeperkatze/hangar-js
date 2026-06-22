@@ -1,6 +1,4 @@
-/**
- * Error thrown for request failures, authentication failures, timeouts, and Hangar API errors.
- */
+/** Error thrown for request failures, authentication failures, timeouts, and Hangar API errors. */
 export class HangarError extends Error {
   override name = 'HangarError' as const;
   status: number;

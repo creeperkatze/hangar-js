@@ -1,6 +1,7 @@
 import type { HangarClientCore } from '../core.js';
 import type { Category, Visibility } from '../../types/index.js';
 
+/** Form for creating a project. */
 export interface CreateProjectForm {
   name: string;
   description: string;

@@ -2,6 +2,7 @@ import type { HangarClientCore } from './core.js';
 import type { User, GetUsersOptions, GetAuthorsOptions, GetStaffOptions } from '../types/index.js';
 import type { PaginatedResult } from '../types/base.js';
 
+/** API namespace for users. */
 export class UsersApi {
   constructor(private readonly core: HangarClientCore) {}
 

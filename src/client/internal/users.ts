@@ -1,6 +1,7 @@
 import type { HangarClientCore } from '../core.js';
 import type { User } from '../../types/index.js';
 
+/** Form for saving user profile settings. */
 export interface ProfileSettingsForm {
   tagline?: string;
   [key: string]: unknown;

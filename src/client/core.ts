@@ -22,6 +22,7 @@ export interface RequestOptions {
   authenticated?: boolean;
 }
 
+/** Low-level HTTP client used internally by all API namespace classes. */
 export class HangarClientCore {
   readonly #baseUrl: string;
   readonly #apiKey: string | undefined;
@@ -38,20 +39,24 @@ export class HangarClientCore {
     this.#fetch = options.fetch ?? globalThis.fetch;
   }
 
+  /** Sends a request and parses the response body as JSON. */
   async requestJson<T>(path: string, options: RequestOptions = {}): Promise<T> {
     const response = await this.#send(path, options);
     return response.json() as Promise<T>;
   }
 
+  /** Sends a request and returns the response body as a string. */
   async requestText(path: string, options: RequestOptions = {}): Promise<string> {
     const response = await this.#send(path, options);
     return response.text();
   }
 
+  /** Sends a request and discards the response body. */
   async requestVoid(path: string, options: RequestOptions = {}): Promise<void> {
     await this.#send(path, options);
   }
 
+  /** Sends a request and returns the response body as an ArrayBuffer. */
   async requestArrayBuffer(path: string, options: RequestOptions = {}): Promise<ArrayBuffer> {
     const response = await this.#send(path, options);
     return response.arrayBuffer();

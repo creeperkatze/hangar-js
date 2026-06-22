@@ -1,5 +1,6 @@
 import type { HangarClientCore } from '../core.js';
 
+/** A project wiki page. */
 export interface ProjectPage {
   id: number;
   name: string;

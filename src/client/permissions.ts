@@ -6,6 +6,7 @@ import type {
   HasPermissionsOptions,
 } from '../types/index.js';
 
+/** API namespace for permission checks. */
 export class PermissionsApi {
   constructor(private readonly core: HangarClientCore) {}
 

@@ -1,6 +1,7 @@
 import type { HangarClientCore } from '../core.js';
 import type { Platform } from '../../types/index.js';
 
+/** Form for saving a version description. */
 export interface SaveDescriptionForm {
   content: string;
 }

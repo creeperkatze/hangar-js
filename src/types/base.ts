@@ -22,32 +22,22 @@ export interface PaginationOptions {
   offset?: number | string;
 }
 
-/**
- * Options for creating a {@link HangarClient}.
- */
+/** Options for creating a {@link HangarClient}. */
 export interface HangarClientOptions {
   /**
    * Base URL of the Hangar instance.
-   *
    * @defaultValue "https://hangar.papermc.io"
    */
   baseUrl?: string;
-  /**
-   * API key used to obtain a JWT for authenticated requests.
-   */
+  /** API key used to obtain a JWT for authenticated requests. */
   apiKey?: string;
   /**
    * Request timeout in milliseconds.
-   *
    * @defaultValue 10000
    */
   timeoutMs?: number;
-  /**
-   * Value to send as the `User-Agent` header on every request.
-   */
+  /** Value to send as the `User-Agent` header on every request. */
   userAgent?: string;
-  /**
-   * Custom fetch implementation.
-   */
+  /** Custom fetch implementation. */
   fetch?: typeof globalThis.fetch;
 }

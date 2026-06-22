@@ -1,9 +1,11 @@
 import type { HangarClientCore } from '../core.js';
 
+/** Form for creating an organization. */
 export interface CreateOrganizationForm {
   name: string;
 }
 
+/** An organization with its members. */
 export interface Organization {
   name: string;
   owner: string;
@@ -13,6 +15,7 @@ export interface Organization {
   members: OrganizationMember[];
 }
 
+/** An organization member entry. */
 export interface OrganizationMember {
   user: string;
   userId: number;
@@ -20,15 +23,18 @@ export interface OrganizationMember {
   hidden: boolean;
 }
 
+/** Form for adding or editing an organization member. */
 export interface EditOrganizationMemberForm {
   role: string;
   name: string;
 }
 
+/** Form for transferring ownership. */
 export interface TransferForm {
   to: string;
 }
 
+/** A user's role within an organization. */
 export interface OrganizationRoleData {
   organization: string;
   role: string;
@@ -36,9 +42,11 @@ export interface OrganizationRoleData {
   hidden: boolean;
 }
 
+/** Internal API namespace for organizations. */
 export class InternalOrganizationsApi {
   constructor(private readonly core: HangarClientCore) {}
 
+  /** Creates a new organization. */
   create(form: CreateOrganizationForm): Promise<void> {
     return this.core.requestVoid('internal/organizations/create', {
       method: 'POST',
@@ -46,12 +54,14 @@ export class InternalOrganizationsApi {
     });
   }
 
+  /** Returns an organization by name. */
   getOrganization(org: string): Promise<Organization> {
     return this.core.requestJson<Organization>(
       `internal/organizations/org/${encodeURIComponent(org)}`,
     );
   }
 
+  /** Cancels a pending ownership transfer. */
   cancelTransfer(org: string): Promise<void> {
     return this.core.requestVoid(
       `internal/organizations/org/${encodeURIComponent(org)}/canceltransfer`,
@@ -59,6 +69,7 @@ export class InternalOrganizationsApi {
     );
   }
 
+  /** Deletes an organization. */
   delete(org: string): Promise<void> {
     return this.core.requestVoid(
       `internal/organizations/org/${encodeURIComponent(org)}/delete`,
@@ -66,6 +77,7 @@ export class InternalOrganizationsApi {
     );
   }
 
+  /** Adds a member to an organization. */
   addMember(org: string, form: EditOrganizationMemberForm): Promise<void> {
     return this.core.requestVoid(
       `internal/organizations/org/${encodeURIComponent(org)}/members/add`,
@@ -73,6 +85,7 @@ export class InternalOrganizationsApi {
     );
   }
 
+  /** Edits a member's role in an organization. */
   editMember(org: string, form: EditOrganizationMemberForm): Promise<void> {
     return this.core.requestVoid(
       `internal/organizations/org/${encodeURIComponent(org)}/members/edit`,
@@ -80,6 +93,7 @@ export class InternalOrganizationsApi {
     );
   }
 
+  /** Removes the current user from an organization. */
   leaveOrganization(org: string): Promise<void> {
     return this.core.requestVoid(
       `internal/organizations/org/${encodeURIComponent(org)}/members/leave`,
@@ -87,6 +101,7 @@ export class InternalOrganizationsApi {
     );
   }
 
+  /** Removes a member from an organization. */
   removeMember(org: string, name: string): Promise<void> {
     return this.core.requestVoid(
       `internal/organizations/org/${encodeURIComponent(org)}/members/remove`,
@@ -94,6 +109,7 @@ export class InternalOrganizationsApi {
     );
   }
 
+  /** Uploads a new avatar for an organization. */
   changeAvatar(org: string, avatar: Blob): Promise<void> {
     const form = new FormData();
     form.set('avatar', avatar);
@@ -103,6 +119,7 @@ export class InternalOrganizationsApi {
     );
   }
 
+  /** Saves social links for an organization. */
   saveSocials(org: string, socials: Record<string, string>): Promise<void> {
     return this.core.requestVoid(
       `internal/organizations/org/${encodeURIComponent(org)}/settings/socials`,
@@ -110,6 +127,7 @@ export class InternalOrganizationsApi {
     );
   }
 
+  /** Updates the tagline of an organization. */
   saveTagline(org: string, tagline: string): Promise<void> {
     return this.core.requestVoid(
       `internal/organizations/org/${encodeURIComponent(org)}/settings/tagline`,
@@ -117,6 +135,7 @@ export class InternalOrganizationsApi {
     );
   }
 
+  /** Initiates an ownership transfer for an organization. */
   transfer(org: string, form: TransferForm): Promise<void> {
     return this.core.requestVoid(
       `internal/organizations/org/${encodeURIComponent(org)}/transfer`,
@@ -124,10 +143,12 @@ export class InternalOrganizationsApi {
     );
   }
 
+  /** Validates an organization name. */
   validateName(name: string): Promise<void> {
     return this.core.requestVoid('internal/organizations/validate', { query: { name } });
   }
 
+  /** Sets whether an organization is hidden from a user's profile. */
   changeVisibility(org: string, hidden: boolean): Promise<void> {
     return this.core.requestVoid(
       `internal/organizations/${encodeURIComponent(org)}/userOrganizationsVisibility`,
@@ -135,12 +156,14 @@ export class InternalOrganizationsApi {
     );
   }
 
+  /** Returns the organization roles for a user. */
   getUserOrganizationRoles(user: string): Promise<OrganizationRoleData[]> {
     return this.core.requestJson<OrganizationRoleData[]>(
       `internal/organizations/${encodeURIComponent(user)}/userOrganizations`,
     );
   }
 
+  /** Returns the visibility settings for a user's organizations. */
   getUserOrganizationVisibility(user: string): Promise<Record<string, boolean>> {
     return this.core.requestJson<Record<string, boolean>>(
       `internal/organizations/${encodeURIComponent(user)}/userOrganizationsVisibility`,
