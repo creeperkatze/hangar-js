@@ -1,0 +1,19 @@
+:root {
+  --vp-c-brand-1: #0d7377;
+  --vp-c-brand-2: #14a085;
+  --vp-c-brand-3: #19c9a6;
+  --vp-c-brand-soft: rgba(13, 115, 119, 0.14);
+  --vp-c-brand-bg: #0d7377;
+  --vp-c-brand-hover: #0a5c5f;
+  --vp-c-brand-active: #074749;
+}
+
+.dark {
+  --vp-c-brand-1: #19c9a6;
+  --vp-c-brand-2: #4dd9bc;
+  --vp-c-brand-3: #7de8ce;
+  --vp-c-brand-soft: rgba(25, 201, 166, 0.18);
+  --vp-c-brand-bg: #19c9a6;
+  --vp-c-brand-hover: #14a085;
+  --vp-c-brand-active: #0d7377;
+}

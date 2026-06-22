@@ -1,4 +1,7 @@
-node_modules/
-dist/
-coverage/
-*.local
+node_modules
+/coverage
+/dist
+docs/.vitepress/.temp
+docs/.vitepress/cache
+docs/.vitepress/dist
+docs/api
