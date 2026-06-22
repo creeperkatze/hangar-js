@@ -1,0 +1,52 @@
+{
+  "name": "hangar-js",
+  "version": "1.0.0",
+  "description": "Framework-agnostic JavaScript API client for the Hangar plugin marketplace by PaperMC",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "release:patch": "pnpm version patch && git push && git push --tags",
+    "release:minor": "pnpm version minor && git push && git push --tags",
+    "release:major": "pnpm version major && git push && git push --tags"
+  },
+  "keywords": [
+    "hangar",
+    "papermc",
+    "minecraft",
+    "plugins",
+    "api"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/creeperkatze/hangar-js"
+  },
+  "author": "Creeperkatze",
+  "license": "AGPL-3.0-only",
+  "packageManager": "pnpm@11.7.0+sha512.19cc852c120c7125760f2443ee6be0ca5b40f9f50598de1a09a1f177503e010e57c23c77646e01e761de59bf874fb22a3398c33ab9691fc13eb946b6f0f4d620",
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^25.9.3",
+    "@vitest/coverage-v8": "^2.1.9",
+    "eslint": "^10.5.0",
+    "globals": "^17.6.0",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.61.1",
+    "vitest": "^2.1.9"
+  }
+}
