@@ -29,16 +29,16 @@ jobs:
               id: docker_meta
               uses: docker/metadata-action@030e881283bb7a6894de51c315a6bfe6a94e05cf # v6.0.0
               with:
-                  images: ghcr.io/creeperkatze/hangar-js
+                  images: ghcr.io/creeperkatze/hangarmc-js
                   tags: |
                       type=raw,value=latest
                       type=ref,event=branch
                       type=sha
                   labels: |
-                      org.opencontainers.image.title=hangar-js docs
-                      org.opencontainers.image.description=VitePress and TypeDoc site for hangar-js
+                      org.opencontainers.image.title=hangarmc-js docs
+                      org.opencontainers.image.description=VitePress and TypeDoc site for hangarmc-js
                       org.opencontainers.image.licenses=AGPL-3.0-only
-                      org.opencontainers.image.source=https://github.com/creeperkatze/hangar-js
+                      org.opencontainers.image.source=https://github.com/creeperkatze/hangarmc-js
 
             - name: Login to GitHub Container Registry
               uses: docker/login-action@4907a6ddec9925e35a0a9e82d7399ccc52663121 # v4.1.0
@@ -55,5 +55,5 @@ jobs:
                   push: true
                   tags: ${{ steps.docker_meta.outputs.tags }}
                   labels: ${{ steps.docker_meta.outputs.labels }}
-                  cache-from: type=registry,ref=ghcr.io/creeperkatze/hangar-js:main
+                  cache-from: type=registry,ref=ghcr.io/creeperkatze/hangarmc-js:main
                   cache-to: type=inline

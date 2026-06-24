@@ -5,4 +5,3 @@ vitest.config.ts
 eslint.config.js
 .editorconfig
 .github/
-api.json

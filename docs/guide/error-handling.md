@@ -5,7 +5,7 @@ All request failures (network errors, timeouts, and API errors) throw a `HangarE
 ## Catching errors
 
 ```ts
-import HangarClient, { HangarError } from 'hangar-js';
+import HangarClient, { HangarError } from 'hangarmc-js';
 
 try {
   await client.projects.get('PaperMC', 'NonExistent');

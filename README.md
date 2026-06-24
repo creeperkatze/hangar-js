@@ -1,30 +1,30 @@
-# hangar-js
+# hangarmc-js
 
 A framework-agnostic JavaScript client for the Hangar API by PaperMC.
 
-[![NPM Version](https://img.shields.io/npm/v/hangar-js)](https://www.npmjs.com/package/hangar-js)
-[![NPM Downloads](https://img.shields.io/npm/dt/hangar-js)](https://www.npmjs.com/package/hangar-js)
-[![GitHub Branch Check Runs](https://img.shields.io/github/check-runs/creeperkatze/hangar-js/main)](https://github.com/creeperkatze/hangar-js/actions)
-[![Codecov](https://img.shields.io/codecov/c/github/creeperkatze/hangar-js)](https://codecov.io/github/creeperkatze/hangar-js)
-[![GitHub Issues](https://img.shields.io/github/issues/creeperkatze/hangar-js)](https://github.com/creeperkatze/hangar-js/issues)
-[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/creeperkatze/hangar-js)](https://github.com/creeperkatze/hangar-js/pulls)
-[![GitHub Repo stars](https://img.shields.io/github/stars/creeperkatze/hangar-js?style=flat)](https://github.com/creeperkatze/hangar-js/stargazers)
+[![NPM Version](https://img.shields.io/npm/v/hangarmc-js)](https://www.npmjs.com/package/hangarmc-js)
+[![NPM Downloads](https://img.shields.io/npm/dt/hangarmc-js)](https://www.npmjs.com/package/hangarmc-js)
+[![GitHub Branch Check Runs](https://img.shields.io/github/check-runs/creeperkatze/hangarmc-js/main)](https://github.com/creeperkatze/hangarmc-js/actions)
+[![Codecov](https://img.shields.io/codecov/c/github/creeperkatze/hangarmc-js)](https://codecov.io/github/creeperkatze/hangarmc-js)
+[![GitHub Issues](https://img.shields.io/github/issues/creeperkatze/hangarmc-js)](https://github.com/creeperkatze/hangarmc-js/issues)
+[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/creeperkatze/hangarmc-js)](https://github.com/creeperkatze/hangarmc-js/pulls)
+[![GitHub Repo stars](https://img.shields.io/github/stars/creeperkatze/hangarmc-js?style=flat)](https://github.com/creeperkatze/hangarmc-js/stargazers)
 
-[📝 Changelog](https://github.com/creeperkatze/hangar-js/releases)
+[📝 Changelog](https://github.com/creeperkatze/hangarmc-js/releases)
 
 ## 📦 Installation
 
 ```sh
-npm install hangar-js
-pnpm add hangar-js
-yarn add hangar-js
-bun add hangar-js
+npm install hangarmc-js
+pnpm add hangarmc-js
+yarn add hangarmc-js
+bun add hangarmc-js
 ```
 
 ## 🚀 Usage
 
 ```ts
-import HangarClient from 'hangar-js';
+import HangarClient from 'hangarmc-js';
 
 const client = new HangarClient({
   apiKey: 'your-api-key',
@@ -134,7 +134,7 @@ The token is refreshed automatically when it expires (with a 5-second buffer).
 You can inject your own `fetch` implementation.
 
 ```ts
-import HangarClient from 'hangar-js';
+import HangarClient from 'hangarmc-js';
 import fetch from 'node-fetch';
 
 const client = new HangarClient({
@@ -148,7 +148,7 @@ const client = new HangarClient({
 All request, authentication, timeout, and API errors are thrown as `HangarError`.
 
 ```ts
-import HangarClient, { HangarError } from 'hangar-js';
+import HangarClient, { HangarError } from 'hangarmc-js';
 
 const client = new HangarClient({ apiKey: 'your-api-key' });
 

@@ -1,5 +1,5 @@
 {
-  "name": "hangar-js",
+  "name": "hangarmc-js",
   "version": "1.0.0",
   "description": "Framework-agnostic JavaScript API client for the Hangar plugin marketplace by PaperMC",
   "type": "module",
@@ -35,7 +35,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/creeperkatze/hangar-js"
+    "url": "https://github.com/creeperkatze/hangarmc-js"
   },
   "author": "Creeperkatze",
   "license": "AGPL-3.0-only",

@@ -2,7 +2,7 @@
 layout: home
 
 hero:
-  name: hangar-js
+  name: hangarmc-js
   tagline: A framework-agnostic JavaScript client for the Hangar API by PaperMC.
   actions:
     - theme: brand
@@ -13,10 +13,10 @@ hero:
       link: /api/
     - theme: alt
       text: GitHub
-      link: https://github.com/creeperkatze/hangar-js
+      link: https://github.com/creeperkatze/hangarmc-js
     - theme: alt
       text: Npm
-      link: https://www.npmjs.com/package/hangar-js
+      link: https://www.npmjs.com/package/hangarmc-js
 
 features:
   - title: Automatic auth

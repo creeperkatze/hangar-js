@@ -73,7 +73,7 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss(), svgLoader()],
   },
-  title: "hangar-js",
+  title: "hangarmc-js",
   description: "A framework-agnostic JavaScript client for the Hangar API.",
   base,
   cleanUrls: true,
@@ -86,7 +86,7 @@ export default defineConfig({
         items: [
           {
             text: "Changelog",
-            link: "https://github.com/creeperkatze/hangar-js/releases",
+            link: "https://github.com/creeperkatze/hangarmc-js/releases",
           },
         ],
       },
@@ -123,11 +123,11 @@ export default defineConfig({
     },
     lastUpdated: {},
     editLink: {
-      pattern: "https://github.com/creeperkatze/hangar-js/edit/main/docs/:path",
+      pattern: "https://github.com/creeperkatze/hangarmc-js/edit/main/docs/:path",
     },
     socialLinks: [
-      { icon: "github", link: "https://github.com/creeperkatze/hangar-js" },
-      { icon: "npm", link: "https://www.npmjs.com/package/hangar-js" },
+      { icon: "github", link: "https://github.com/creeperkatze/hangarmc-js" },
+      { icon: "npm", link: "https://www.npmjs.com/package/hangarmc-js" },
     ],
     search: {
       provider: "local",

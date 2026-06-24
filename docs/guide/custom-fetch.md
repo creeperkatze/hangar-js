@@ -5,7 +5,7 @@
 You can provide your own `fetch` for non-standard runtimes or to add middleware such as logging or retry logic.
 
 ```ts
-import HangarClient from 'hangar-js';
+import HangarClient from 'hangarmc-js';
 import fetch from 'node-fetch';
 
 const client = new HangarClient({

@@ -55,7 +55,7 @@ export interface InternalApis {
  * Client for the Hangar plugin marketplace API.
  * @example
  * ```ts
- * import HangarClient from 'hangar-js';
+ * import HangarClient from 'hangarmc-js';
  * const client = new HangarClient({ apiKey: 'your-api-key' });
  * const project = await client.projects.get('PaperMC', 'Hangar');
  * ```

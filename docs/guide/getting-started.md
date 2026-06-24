@@ -5,19 +5,19 @@
 ::: code-group
 
 ```sh [npm]
-npm install hangar-js
+npm install hangarmc-js
 ```
 
 ```sh [pnpm]
-pnpm add hangar-js
+pnpm add hangarmc-js
 ```
 
 ```sh [yarn]
-yarn add hangar-js
+yarn add hangarmc-js
 ```
 
 ```sh [bun]
-bun add hangar-js
+bun add hangarmc-js
 ```
 
 :::
@@ -25,7 +25,7 @@ bun add hangar-js
 ## Create a client
 
 ```ts
-import HangarClient from 'hangar-js';
+import HangarClient from 'hangarmc-js';
 
 const client = new HangarClient({
   apiKey: 'your-api-key',
