@@ -1,0 +1,58 @@
+import { describe, it, expect } from 'vitest';
+import { createTestClient } from '../utils/client.js';
+import { jsonResponse, textResponse } from '../utils/http.js';
+
+const MOCK_JWT = { token: 'test-jwt', expiresIn: 3_600_000 };
+
+describe('PagesApi', () => {
+  it('fetches the main page content as text', async () => {
+    const { client, mockFetch } = createTestClient([textResponse('# Hello World')]);
+    const content = await client.pages.getMain('PaperMC', 'TestPlugin');
+    expect(content).toBe('# Hello World');
+    expect(mockFetch.lastCall()?.url).toContain('/api/v1/pages/main/PaperMC/TestPlugin');
+  });
+
+  it('fetches a wiki page content as text', async () => {
+    const { client, mockFetch } = createTestClient([textResponse('## Wiki Page')]);
+    const content = await client.pages.get('PaperMC', 'TestPlugin');
+    expect(content).toBe('## Wiki Page');
+    expect(mockFetch.lastCall()?.url).toContain('/api/v1/pages/page/PaperMC/TestPlugin');
+  });
+
+  it('appends optional path query parameter', async () => {
+    const { client, mockFetch } = createTestClient([textResponse('## Sub Page')]);
+    await client.pages.get('PaperMC', 'TestPlugin', 'docs/setup');
+    expect(mockFetch.lastCall()?.url).toContain('path=docs%2Fsetup');
+  });
+
+  it('encodes author and slug in URL', async () => {
+    const { client, mockFetch } = createTestClient([textResponse('')]);
+    await client.pages.getMain('Paper MC', 'Test Plugin');
+    expect(mockFetch.lastCall()?.url).toContain('Paper%20MC');
+    expect(mockFetch.lastCall()?.url).toContain('Test%20Plugin');
+  });
+
+  it('edits a page with POST and requires auth', async () => {
+    const { client, mockFetch } = createTestClient([
+      jsonResponse(MOCK_JWT),
+      new Response(null, { status: 204 }),
+    ]);
+    await expect(
+      client.pages.edit('PaperMC', 'TestPlugin', { path: 'docs', content: '## Content' }),
+    ).resolves.toBeUndefined();
+    expect(mockFetch.lastCall()?.method).toBe('POST');
+    expect(mockFetch.lastCall()?.url).toContain('/api/v1/pages/edit/PaperMC/TestPlugin');
+    expect(mockFetch.lastCall()?.headers.get('Authorization')).toBe('HangarAuth test-jwt');
+  });
+
+  it('deletes a page with DELETE and requires auth', async () => {
+    const { client, mockFetch } = createTestClient([
+      jsonResponse(MOCK_JWT),
+      new Response(null, { status: 204 }),
+    ]);
+    await expect(client.pages.delete('PaperMC', 'TestPlugin', 'docs/old')).resolves.toBeUndefined();
+    expect(mockFetch.lastCall()?.method).toBe('DELETE');
+    expect(mockFetch.lastCall()?.url).toContain('/api/v1/pages/delete/PaperMC/TestPlugin');
+    expect(mockFetch.lastCall()?.url).toContain('path=');
+  });
+});
