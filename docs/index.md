@@ -15,7 +15,7 @@ hero:
       text: GitHub
       link: https://github.com/creeperkatze/hangarmc-js
     - theme: alt
-      text: Npm
+      text: npm
       link: https://www.npmjs.com/package/hangarmc-js
 
 features:
