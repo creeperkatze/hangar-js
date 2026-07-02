@@ -74,7 +74,7 @@ export default defineConfig({
     plugins: [tailwindcss(), svgLoader()],
   },
   title: "hangarmc-js",
-  description: "A framework-agnostic JavaScript client for the Hangar API.",
+  description: "A framework-agnostic fully typed JavaScript client for the Hangar API by PaperMC.",
   base,
   cleanUrls: true,
   themeConfig: {

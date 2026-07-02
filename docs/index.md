@@ -3,7 +3,7 @@ layout: home
 
 hero:
   name: hangarmc-js
-  tagline: A framework-agnostic JavaScript client for the Hangar API by PaperMC.
+  tagline: A framework-agnostic fully typed JavaScript client for the Hangar API by PaperMC.
   actions:
     - theme: brand
       text: Getting Started

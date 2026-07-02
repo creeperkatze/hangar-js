@@ -1,6 +1,6 @@
 # hangarmc-js
 
-A framework-agnostic JavaScript client for the Hangar API by PaperMC.
+A framework-agnostic fully typed JavaScript client for the Hangar API by PaperMC.
 
 [![NPM Version](https://img.shields.io/npm/v/hangarmc-js)](https://www.npmjs.com/package/hangarmc-js)
 [![NPM Downloads](https://img.shields.io/npm/dt/hangarmc-js)](https://www.npmjs.com/package/hangarmc-js)

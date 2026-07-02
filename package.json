@@ -1,7 +1,7 @@
 {
   "name": "hangarmc-js",
   "version": "1.0.0",
-  "description": "Framework-agnostic JavaScript API client for the Hangar plugin marketplace by PaperMC",
+  "description": "A framework-agnostic fully typed JavaScript client for the Hangar API by PaperMC",
   "type": "module",
   "exports": {
     ".": {
