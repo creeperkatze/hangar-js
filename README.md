@@ -10,6 +10,9 @@ A framework-agnostic JavaScript client for the Hangar API by PaperMC.
 [![GitHub Pull Requests](https://img.shields.io/github/issues-pr/creeperkatze/hangarmc-js)](https://github.com/creeperkatze/hangarmc-js/pulls)
 [![GitHub Repo stars](https://img.shields.io/github/stars/creeperkatze/hangarmc-js?style=flat)](https://github.com/creeperkatze/hangarmc-js/stargazers)
 
+[📚 Docs](https://hangarmc-js.creeperkatze.dev/) •
+[🚀 Getting Started](https://hangarmc-js.creeperkatze.dev/guide/getting-started) •
+[📖 API Reference](https://hangarmc-js.creeperkatze.dev/api/) •
 [📝 Changelog](https://github.com/creeperkatze/hangarmc-js/releases)
 
 ## 📦 Installation
